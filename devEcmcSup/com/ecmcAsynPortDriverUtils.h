@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcAsynPortDriverUtils.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMC_ASYN_PORT_DRIVER_UTILS_H_
 #define ECMC_ASYN_PORT_DRIVER_UTILS_H_
@@ -44,7 +50,7 @@ typedef enum{
 } ECMCTIMESOURCE;
 
 typedef enum{
-  ECMC_SOURCE_UNDEFINED=0,  
+  ECMC_SOURCE_UNDEFINED=0,
   ECMC_SOURCE_EC=1,
   ECMC_SOURCE_AXIS=2,
   ECMC_SOURCE_MAIN=3,
@@ -87,44 +93,44 @@ int getMainObjectType(char             *objPath,
  *
  * \return 0 if success or otherwise an error code.\n
  */
-int getAxSubObjectType(char              *objPath,                       
+int getAxSubObjectType(char              *objPath,
                        axisSubObjectType *objectType);
 
 /** \brief Parse Axis Encoder function type from string.\n
  *
  * \param[in] objPath variable name.\n
  * \param[out] objectFunction Object Function.\n
- * 
+ *
  * \return 0 if success or otherwise an error code.\n
  */
-int getAxEncFuncType(char *objPath,                              
+int getAxEncFuncType(char *objPath,
                      int  *objectFunction);
 
 /** \brief Parse Axis Drive function type from string.\n
  *
  * \param[in] objPath variable name.\n
  * \param[out] objectFunction Object Function.\n
- * 
+ *
  * \return 0 if success or otherwise an error code.\n
  */
-int getAxDriveFuncType(char *objPath,                              
+int getAxDriveFuncType(char *objPath,
                        int *objectFunction);
 
 /** \brief Parse Axis Monitor function type from string.\n
  *
  * \param[in] objPath variable name.\n
  * \param[out] objectFunction Object Function.\n
- * 
+ *
  * \return 0 if success or otherwise an error code.\n
  */
-int getAxMonFuncType(char *objPath,                              
+int getAxMonFuncType(char *objPath,
                      int *objectFunction);
 
 /** \brief Parse Axis Main object function type from string.\n
  *
  * \param[in] objPath variable name.\n
  * \param[out] objectFunction Object Function.\n
- * 
+ *
  * \return 0 if success or otherwise an error code.\n
  */
 int getAxMainFuncType(char *objPath,
@@ -134,7 +140,7 @@ int getAxMainFuncType(char *objPath,
  *
  * \param[in] objPath variable name.\n
  * \param[out] objectFunction Object Function.\n
- * 
+ *
  * \return 0 if success or otherwise an error code.\n
  */
 int getEcMainFuncType(char *objPath,

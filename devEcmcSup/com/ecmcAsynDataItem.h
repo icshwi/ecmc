@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcAsynDataItem.h
 *
@@ -10,10 +10,16 @@
 *
 \*************************************************************************/
 
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
+
 #ifndef ECMC_ASYN_DATA_ITEM_H_
 #define ECMC_ASYN_DATA_ITEM_H_
 
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 #include "inttypes.h"
 #include "../main/ecmcDefinitions.h"
 #include "ecmcAsynPortDriverUtils.h"
@@ -75,7 +81,7 @@ public:
                     asynParamType asynParType);
   ecmcAsynDataItem (ecmcAsynPortDriver *asynPortDriver);
   ~ecmcAsynDataItem ();
-  int setEcmcDataPointer(uint8_t *data,size_t bytes);  
+  int setEcmcDataPointer(uint8_t *data,size_t bytes);
   int refreshParam(int force);
   int refreshParam(int force, size_t bytes);
   int refreshParam(int force, uint8_t *data, size_t bytes);
@@ -89,7 +95,7 @@ public:
   int getAsynParameterIndex();
   int setAsynParameterType(asynParamType parType);
   asynParamType getAsynParameterType();
-  int setAsynPortDriver(ecmcAsynPortDriver *asynPortDriver);  
+  int setAsynPortDriver(ecmcAsynPortDriver *asynPortDriver);
   bool initialized();
   char * getName();
   char * getDrvInfo();
@@ -119,7 +125,7 @@ public:
   size_t getEcmcBitCount();
   void setArrayCheckSize(bool check);
   bool getArrayCheckSize();
-    
+
   asynStatus setDrvInfo(const char *drvInfo);
 
   asynStatus readInt32(epicsInt32 *value);
@@ -130,7 +136,7 @@ public:
                                 epicsUInt32 mask);
   asynStatus readFloat64(epicsFloat64 *value);
   asynStatus writeFloat64(epicsFloat64 value);
-  asynStatus readInt8Array(epicsInt8 *value, 
+  asynStatus readInt8Array(epicsInt8 *value,
                            size_t nElements,
                            size_t *nIn);
   asynStatus writeInt8Array(epicsInt8 *value,
@@ -176,7 +182,7 @@ private:
   ecmcParamInfo paramInfo_;
   bool allowWriteToEcmc_;
   asynParamType supportedTypes_[ERROR_ASYN_MAX_SUPPORTED_TYPES_COUNT];
-  int supportedTypesCounter_;  
+  int supportedTypesCounter_;
   int checkIntRange_;
   //value limits for writes
   int64_t intMax_;

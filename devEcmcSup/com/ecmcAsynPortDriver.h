@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcAsynPortDriver.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMC_ASYN_PORT_DRIVER_H_
 #define ECMC_ASYN_PORT_DRIVER_H_
@@ -43,7 +49,7 @@ class ecmcAsynPortDriver : public asynPortDriver {
   virtual asynStatus writeFloat64(asynUser    *pasynUser,
                                   epicsFloat64 value);
   virtual asynStatus readFloat64(asynUser *pasynUser,
-                                 epicsFloat64 *value);                                 
+                                 epicsFloat64 *value);
   virtual asynStatus writeInt8Array(asynUser *pasynUser,
                                     epicsInt8 *value,
                                     size_t nElements);
@@ -83,7 +89,7 @@ class ecmcAsynPortDriver : public asynPortDriver {
                                    const char *drvInfo,
                                    const char **pptypeName,
                                    size_t *psize);
-                                   
+
   virtual void report(FILE *fp, int details);
   void      setAllowRtThreadCom(bool allowRtCom);
   bool      getAllowRtThreadCom();
@@ -93,7 +99,7 @@ class ecmcAsynPortDriver : public asynPortDriver {
                                      uint8_t *data,
                                      size_t bytes,
                                      bool dieIfFail);
-   int32_t getFastestUpdateRate();   
+   int32_t getFastestUpdateRate();
    int32_t calcFastestUpdateRate();
    int getDefaultSampleTimeMs();
    void    refreshAllInUseParamsRT();
