@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcTrajectoryTrapetz.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef SRC_ECMCTRAJECTORYTRAPETZ_H_
 #define SRC_ECMCTRAJECTORYTRAPETZ_H_
@@ -132,7 +138,7 @@ class ecmcTrajectoryTrapetz : public ecmcError {
    */
   void            setEmergDec(double dec);
 
-  /** Currently not implemented (will be used when 
+  /** Currently not implemented (will be used when
    * s-shaped trajectory is implemented).
    */
   void            setJerk(double jerk);
@@ -224,6 +230,6 @@ class ecmcTrajectoryTrapetz : public ecmcError {
   motionMode motionMode_;
   interlockTypes interlockStatus_;
   ecmcAxisData *data_;
-  stopMode latchedStopMode_;  
+  stopMode latchedStopMode_;
 };
 #endif  // ifndef SRC_ECMCTRAJECTORYTRAPETZ_H_

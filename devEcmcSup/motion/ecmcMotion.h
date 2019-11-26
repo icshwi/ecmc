@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcMotion.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMC_MOTION_H_
 #define ECMC_MOTION_H_
@@ -990,7 +996,7 @@ const char* getAxisEncTransExpr(int  axisIndex,
  * The axis sync PLC expression is used for enabling and executing of\n
  * axes based on mathematical expressions. This is useful when synchronizing\n
  * axes i.e. a slave axis could recive an custom trajatory, other enabled based\
- * on other axes or ethercat data in the form of mathematical expressions.\n 
+ * on other axes or ethercat data in the form of mathematical expressions.\n
  *
  * \param[in] axisIndex  Axis index.\n
  * \param[out] error Error code.\n
@@ -1567,14 +1573,14 @@ int axisErrorReset(int axisIndex,
 /** \brief Enables/disables velocity filter of external setpoint.\n
  *
  *  This filter is needed in order to have a smoth feedforward value when\n
- *  reciving setpoints form an PLC. If filter is disabled the velocity will\n 
+ *  reciving setpoints form an PLC. If filter is disabled the velocity will\n
  *  be calculated based on the last two postion values recived from PLC. In many\n
  *  cases this will result in a "unstable signal" depending onresoltions of the\n
- *  values involved in the calculation. Using a filter will smoth the velocity\n 
+ *  values involved in the calculation. Using a filter will smoth the velocity\n
  *  feed forward value and will thereby result in a smoother motion.\n
- * 
+ *
  * \note: This filter is only enabled when the axis recives setpoin ts from an PLC.\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  * \param[in] enable enable filter.\n
  *
@@ -1590,14 +1596,14 @@ int setAxisPLCTrajVelFilterEnable(int axisIndex,
  *
  *  Sets the size of the filter for velocity from "external" PLC code.\n
  *  This filter is needed in order to have a smoth feedforward value when\n
- *  reciving setpoints form an PLC. If filter is disabled the velocity will\n 
+ *  reciving setpoints form an PLC. If filter is disabled the velocity will\n
  *  be calculated based on the last two postion values recived from PLC. In many\n
  *  cases this will result in a "unstable signal" depending onresoltions of the\n
- *  values involved in the calculation. Using a filter will smoth the velocity\n 
+ *  values involved in the calculation. Using a filter will smoth the velocity\n
  *  feed forward value and will thereby rresult in a smoother motion.\n
- * 
+ *
  * \note: This filter is only enabled when the axis recives setpoin ts from an PLC.\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  * \param[in] size       Size of filter (default 100).\n
  *
@@ -1612,7 +1618,7 @@ int setAxisPLCTrajVelFilterSize(int axisIndex,
 /** \brief Enables/disables velocity filter of external actual value.\n
  *
  * NOTE: This filter is currentlly not used.\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  * \param[in] enable enable filter.\n
  *
@@ -1627,7 +1633,7 @@ int setAxisPLCEncVelFilterEnable(int axisIndex,
 /** \brief Set size of external encoder velocity filter.\n
  *
  * NOTE: This filter is currentlly not used.\n
- * 
+ *
  *  Sets the size of the filter for velocity from "external" PLC code.\n
  * \param[in] axisIndex  Axis index.\n
  * \param[in] size       Size of filter (default 100).\n
@@ -1645,7 +1651,7 @@ int setAxisPLCEncVelFilterSize(int axisIndex,
  *  Sets the size of the low pass filter for velocity.\n
  *  Needed when resolution of encoder is low compared to\n
  *  sample rate and speed.\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  * \param[in] size       Size of filter (default 100), needs to be >0.\n
  *
@@ -2071,7 +2077,7 @@ int setAxisDrvReduceTorqueEnable(int axisIndex,
 
 /** \brief Set drive type.\n
  *  OBSOLETE COMMAND. USE CREATEAXIS(id,type,drvtype).
- * 
+ *
  * \note  ALL SETTINGS MADE TO THE DRIVE WILL BE OVERWRITTEN.\n
  *
  * \param[in] axisIndex  Axis index.\n
@@ -2705,7 +2711,7 @@ int setAxisPLCEnable(int axisIndex,
  * "ax2.drv.enable:=ax1.drv.enable or ax5.drv.enable|".\n
  *
  * For more syntax help plese view PLC syntax (setPLCExpr()).\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  * \param[in] expr PLC expression.\n
  *
@@ -2722,7 +2728,7 @@ int appendAxisPLCExpr(int   axisIndex,
 /** \brief Compile Axis PLC code\n
  *
  * For more syntax help plese view PLC syntax (setPLCExpr()).\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  *
  * \return 0 if success or otherwise an error code.\n
@@ -2740,7 +2746,7 @@ int compileAxisPLCExpr(int   axisIndex);
  *   type = 2 : Virtual axis (encoder, monitor, trajectory).\n
  * \param[in] drvType Type of axis.\n
  *   type = 0 : Simple drive (stepper).\n
- *   type = 1 : DS402 drive.\n 
+ *   type = 1 : DS402 drive.\n
  *
  * \return 0 if success or otherwise an error code.\n
  *
@@ -2749,7 +2755,7 @@ int compileAxisPLCExpr(int   axisIndex);
  *
  * \note Example: Create a virtual axis at axisIndex 1 (no drive).\n
  *  "Cfg.CreateAxis(1,2)" //Command string to ecmcCmdParser.c\n
- * 
+ *
  * \note Example: Create a normal axis with DS402 drive at axisIndex 1.\n
  *  "Cfg.CreateAxis(1,2,1)" //Command string to ecmcCmdParser.c\n
  */
@@ -2964,10 +2970,10 @@ int setAxisModRange(int  axisIndex,
                     double range);
 
 /** \brief Set axis modulo motion type.\n
- * 
+ *
  * Used for positioning if modulo range is set (setAxisModRange())\n
  * to a value greater than 0.\n
- * 
+ *
  * \param[in] axisIndex  Axis index.\n
  * \param[in] type Modulo type.\n
  *    type = 0 : ECMC_MOD_MOTION_NORMAL\n
