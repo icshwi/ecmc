@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcGeneral.h
 *
@@ -9,6 +9,13 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* General for ECMC motion control.
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMC_GENERAL_H_
 #define ECMC_GENERAL_H_
@@ -117,7 +124,7 @@ int setEnableTimeDiag(int value);
  *  "Cfg.SetEnableFuncCallDiag(1)" //Command string to ecmcCmdParser.c\n
  */
 int setEnableFunctionCallDiag(int value);
-                       
+
 # ifdef __cplusplus
 }
 # endif  // ifdef __cplusplus

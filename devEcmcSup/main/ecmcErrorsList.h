@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcErrorsList.h
 *
@@ -9,6 +9,13 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* Error list for ECMC motion control.
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMCERRORSLIST_H_
 #define ECMCERRORSLIST_H_

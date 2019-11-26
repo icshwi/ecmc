@@ -1,16 +1,23 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcGlobalsExtern.h
 *
 *  Created on: Jan 10, 2019
 *      Author: anderssandstrom
-* 
+*
 * TODO: REDO WITHOUT GLOBALS
-* 
+*
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* External globals handling for ECMC motion control.
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMC_GLOBALS_EXTERN_H_
 #define ECMC_GLOBALS_EXTERN_H_

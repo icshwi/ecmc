@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcDefinitions.h
 *
@@ -9,6 +9,13 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* Definitions for ECMC motion control.
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #define __STDC_FORMAT_MACROS  // for printf uint_64_t
 #include <stdint.h>
@@ -37,7 +44,7 @@
 #define ECMC_STACK_SIZE (100*1024)  /*RT thread stack size*/
 #define ECMC_PRE_ALLOCATION_SIZE (10*1024*1024) /* 1MB pagefault free buffer */
 
-#define ECMC_RT_THREAD_NAME "ecmc_rt" 
+#define ECMC_RT_THREAD_NAME "ecmc_rt"
 
 // Buffer size
 #define EC_MAX_OBJECT_PATH_CHAR_LENGTH 256
@@ -303,7 +310,7 @@ enum axisSubObjectType {
 
 
 #define AXIS_PLC_ID_TO_PLC_ID(axisId) (axisId) + ECMC_MAX_PLCS
-                                   
+
 
 #define ECMC_MAIN_STR "main"
 #define ECMC_THREAD_STR "thread"

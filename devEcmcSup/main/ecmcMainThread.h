@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcMainThread.h
 *
@@ -10,15 +10,15 @@
 *
 \*************************************************************************/
 
+/**\file
+* \defgroup ecmc
+* Main interface for ECMC motion control.
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
+
 #ifndef ECMC_MAIN_TASK_H_
 # define ECMC_MAIN_TASK_H_
-
-/**\file
- * \defgroup ecmc
- * Main interface for ECMC motion control.
- * \author Anders Sandström
- * \contact anders.sandstrom@esss.se
- */
 
 # define __STDC_FORMAT_MACROS
 # include <inttypes.h>
@@ -34,7 +34,7 @@ extern "C" {
 // Error Codes
 # define ECMC_PARSER_READ_STORAGE_BUFFER_DATA_NULL 0x200000
 
-/** 
+/**
  * \brief Initialization routine for ecmc.\n
  */
 int ecmcInitThread(void);
