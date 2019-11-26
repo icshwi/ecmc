@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcEc.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMCEC_H_
 #define ECMCEC_H_
@@ -167,7 +173,7 @@ class ecmcEc : public ecmcError {
                         uint32_t vendorId,   /**< Expected vendor ID. */
                         uint32_t productCode  /**< Exp)*/);
   int           checkReadyForRuntime();
-  uint64_t      getTimeNs();                 
+  uint64_t      getTimeNs();
  private:
   void     initVars();
   int      updateInputProcessImage();

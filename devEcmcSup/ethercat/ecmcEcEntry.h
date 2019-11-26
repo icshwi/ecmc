@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcEcEntry.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMCECENTRY_H_
 #define ECMCECENTRY_H_
@@ -121,6 +127,6 @@ class ecmcEcEntry : public ecmcError /*, public ecmcAsynLink*/ {
   int masterId_;
   int slaveId_;
   ecmcAsynPortDriver *asynPortDriver_;
-  ecmcAsynDataItem  *entryAsynParam_;    
+  ecmcAsynDataItem  *entryAsynParam_;
 };
 #endif  /* ECMCECENTRY_H_ */

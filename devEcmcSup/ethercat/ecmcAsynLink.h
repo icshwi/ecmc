@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcAsynLink.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMCASYNLINK_H_
 #define ECMCASYNLINK_H_
@@ -28,7 +34,7 @@ public:
                                  epicsUInt32 mask) = 0;
   virtual int readFloat64(epicsFloat64 *value) = 0;
   virtual int writeFloat64(epicsFloat64 value) = 0;
-  virtual int readInt8Array(epicsInt8 *value, 
+  virtual int readInt8Array(epicsInt8 *value,
                             size_t nElements, size_t *nIn) = 0;
   virtual int writeInt8Array(epicsInt8 *value,
                              size_t nElements) = 0;

@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcEcSlave.h
 *
@@ -10,6 +10,11 @@
 *
 \*************************************************************************/
 
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMCECSLAVE_H_
 #define ECMCECSLAVE_H_
@@ -63,7 +68,7 @@ class ecmcEcSlave : public ecmcError {
   ecmcEcSlave(
     ecmcAsynPortDriver* asynPortDriver,  /** Asyn port driver*/
     int masterId,
-    ec_master_t *master,  /**< EtherCAT master */    
+    ec_master_t *master,  /**< EtherCAT master */
     ec_domain_t *domain,
     uint16_t     alias, /**< Slave alias. */
     int32_t     position, /**< Slave position. */

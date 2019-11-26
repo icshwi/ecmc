@@ -1,7 +1,7 @@
 /*************************************************************************\
 * Copyright (c) 2019 European Spallation Source ERIC
 * ecmc is distributed subject to a Software License Agreement found
-* in file LICENSE that is included with this distribution. 
+* in file LICENSE that is included with this distribution.
 *
 *  ecmcEcMemMap.h
 *
@@ -9,6 +9,12 @@
 *      Author: anderssandstrom
 *
 \*************************************************************************/
+
+/**\file
+* \defgroup ecmc
+* \author Anders Sandström
+* \contact anders.sandstrom@esss.se
+*/
 
 #ifndef ECMCECMEMMAP_H_
 #define ECMCECMEMMAP_H_
@@ -53,14 +59,14 @@ class ecmcEcMemMap : public ecmcError {
 
  private:
   int        initAsyn();
-  int        updateAsyn(bool force);  
+  int        updateAsyn(bool force);
   size_t     byteSize_;
   size_t     domainSize_;
   int        type_;
   int        byteOffset_;
   int        masterId_;
   int        slaveId_;
-  uint8_t    *domainAdr_;  
+  uint8_t    *domainAdr_;
   uint8_t    *adr_;
   uint8_t    *buffer_;
   ec_direction_t     direction_;
