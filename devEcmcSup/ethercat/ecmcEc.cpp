@@ -630,6 +630,7 @@ void ecmcEc::send(timespec timeOffset) {
   ecrt_master_sync_reference_clock_to(master_,TIMESPEC2NS(timeAbs_));
   
   //ecrt_master_sync_reference_clock(master_);
+  ecrt_master_reference_clock_time(master_, &refTime_);
   
   ecrt_master_sync_slave_clocks(master_);
   
@@ -2231,4 +2232,8 @@ uint32_t ecmcEc::getSlaveSerialNum(uint16_t alias,  /**< Slave alias. */
 int ecmcEc::useClockRealtime(bool useClkRT) {
    useClockRealtime_ = useClkRT;
    return 0;
+}
+
+int32_t ecmcEc::getRefTimeL32() {   
+   return refTime_;
 }
