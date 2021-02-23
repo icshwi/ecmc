@@ -184,6 +184,8 @@ class ecmcEc : public ecmcError {
   int           useClockRealtime(bool useClkRT);
   uint32_t      getRefTimeL32();
   uint64_t      getSendTime();
+  int32_t       getRefVsSendTimeL32();
+  int64_t       getRefVsSendTime();
 
 private:
   void     initVars();
@@ -238,5 +240,7 @@ private:
 
   uint32_t refTime_;
   uint64_t masterSendTimeNS_;
+  uint64_t masterSendTimeOldNS_;
+  uint64_t refVsSendTime_;
 };
 #endif  /* ECMCEC_H_ */

@@ -45,6 +45,9 @@ void ecmcEc::initVars() {
   statusWordMaster_                 = 0;
   statusWordDomain_                 = 0;
   ecStatOk_                         = 0;
+  masterSendTimeOldNS_              = 0;
+  refVsSendTime_                    = 0;
+  masterSendTimeNS_                 = 0;
 
   epicsTimeGetCurrent(&epicsTime_);
   clock_gettime(CLOCK_REALTIME, &timeRel_);
@@ -625,7 +628,8 @@ void ecmcEc::send(timespec timeOffset) {
     timeAbs_= timespecAdd(timeRel_, timeOffset_);
   }
   
-  masterSendTimeNS_=TIMESPEC2NS(timeAbs_);
+  masterSendTimeOldNS_= masterSendTimeNS_;
+  masterSendTimeNS_ = TIMESPEC2NS(timeAbs_);
 
   ecrt_master_application_time(master_, masterSendTimeNS_);
 
@@ -634,8 +638,10 @@ void ecmcEc::send(timespec timeOffset) {
   //ecrt_master_sync_reference_clock(master_);
   ecrt_master_reference_clock_time(master_, &refTime_);
   
+  // Comapre with last period since ref time is from last scan
+  refVsSendTime_ = (int32_t)(refTime_ - (uint32_t)masterSendTimeOldNS_);
+
   ecrt_master_sync_slave_clocks(master_);
-  
   
   ecrt_domain_queue(domain_);
   ecrt_master_send(master_);
@@ -2242,4 +2248,8 @@ uint32_t ecmcEc::getRefTimeL32() {
 
 uint64_t ecmcEc::getSendTime() {   
    return masterSendTimeNS_;
+}
+
+int64_t ecmcEc::getRefVsSendTime() {
+   return refVsSendTime_;
 }
