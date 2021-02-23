@@ -625,9 +625,11 @@ void ecmcEc::send(timespec timeOffset) {
     timeAbs_= timespecAdd(timeRel_, timeOffset_);
   }
   
-  ecrt_master_application_time(master_, TIMESPEC2NS(timeAbs_));
-  
-  ecrt_master_sync_reference_clock_to(master_,TIMESPEC2NS(timeAbs_));
+  masterSendTimeNS_=TIMESPEC2NS(timeAbs_);
+
+  ecrt_master_application_time(master_, masterSendTimeNS_);
+
+  ecrt_master_sync_reference_clock_to(master_, masterSendTimeNS_);
   
   //ecrt_master_sync_reference_clock(master_);
   ecrt_master_reference_clock_time(master_, &refTime_);
@@ -2236,4 +2238,8 @@ int ecmcEc::useClockRealtime(bool useClkRT) {
 
 uint32_t ecmcEc::getRefTimeL32() {   
    return refTime_;
+}
+
+uint64_t ecmcEc::getSendTime() {   
+   return masterSendTimeNS_;
 }

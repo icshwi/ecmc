@@ -741,6 +741,7 @@ int ecmcPLCTask::loadEcLib() {
   ecmcPLCTaskAddFunction("ec_mm_append_to_ds_scale_offset", ec_mm_append_to_ds_scale_offset);
   ecmcPLCTaskAddFunction("ec_mm_push_asyn", ec_mm_push_asyn);
   ecmcPLCTaskAddFunction("ec_get_ref_time_l32", ec_get_ref_time_l32);
+  ecmcPLCTaskAddFunction("ec_get_send_time_l32", ec_get_send_time_l32);
   
   if (ec_cmd_count != cmdCounter) {
     LOGERR("%s/%s:%d: PLC Lib EC command count missmatch (0x%x).\n",

@@ -50,11 +50,12 @@ const char* ecLibCmdList[] = { "ec_set_bit(",
                                "ec_mm_append_to_ds(",
                                "ec_mm_append_to_ds_scale_offset(",
                                "ec_mm_push_asyn(",
-                               "ec_get_ref_time_l32("
+                               "ec_get_ref_time_l32(",
+                               "ec_get_send_time_l32("
                               };
 
 static int ec_errorCode = 0;
-static int ec_cmd_count = 23;
+static int ec_cmd_count = 24;
 
 inline double ec_set_bit(double value, double bitIndex)
 {
@@ -393,5 +394,14 @@ inline double ec_get_ref_time_l32() {
   return (double)ecmcPLCTask::statEc_->getRefTimeL32();
 }
 
+inline double ec_get_send_time_l32() {
+  ec_errorCode = 0;
+  if(!ecmcPLCTask::statEc_) {
+    ec_errorCode = ERROR_MAIN_EC_MASTER_NULL;
+    return -(double)ec_errorCode;
+  }
+
+  return (double)(uint32_t)ecmcPLCTask::statEc_->getSendTime();
+}
 
 #endif /* ecmcPLC_libEc_inc_ */
