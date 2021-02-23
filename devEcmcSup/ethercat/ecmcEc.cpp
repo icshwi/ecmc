@@ -2234,6 +2234,6 @@ int ecmcEc::useClockRealtime(bool useClkRT) {
    return 0;
 }
 
-int32_t ecmcEc::getRefTimeL32() {   
+uint32_t ecmcEc::getRefTimeL32() {   
    return refTime_;
 }

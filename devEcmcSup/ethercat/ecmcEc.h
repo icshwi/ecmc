@@ -182,7 +182,7 @@ class ecmcEc : public ecmcError {
   uint32_t      getSlaveSerialNum(uint16_t alias,  /**< Slave alias. */
                                   uint16_t slavePos   /**< Slave position. */);
   int           useClockRealtime(bool useClkRT);
-  int32_t       getRefTimeL32();
+  uint32_t       getRefTimeL32();
 
 private:
   void     initVars();
